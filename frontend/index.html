@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarangAI - Digital Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">🏢</div>
+                <div class="header-text">
+                    <h1>BarangAI</h1>
+                    <p>AI Support for Barangay Officials' Digital Literacy</p>
+                </div>
+            </div>
+            <div class="session-info">
+                <small>Session: <span id="sessionDisplay">Loading...</span></small>
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <div class="controls">
+                <label for="contextSelect">Help Category:</label>
+                <select id="contextSelect">
+                    <option value="general">General Digital Assistance</option>
+                    <option value="documents">Document Processing</option>  
+                    <option value="spreadsheets">Spreadsheets & Data</option>
+                    <option value="presentations">Presentations</option>
+                    <option value="communication">Communication Tools</option>
+                    <option value="internet">Internet & Browsing</option>
+                </select>
+                <button onclick="clearChat()" class="clear-btn">
+                    <span>🗑️</span> Clear Chat
+                </button>
+            </div>
+            <div class="file-upload">
+                <button class="upload-btn">
+                    <span>📎</span> Upload File
+                    <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple>
+                </button>
+                <button onclick="takePhoto()" class="upload-btn">
+                    <span>📷</span> Take Photo
+                </button>
+            </div>
+            <div class="file-preview" id="filePreview">
+            </div>
+            <div id="chatMessages" class="chat-messages">
+                <div class="message ai-message">
+                    <strong>BarangAI:</strong> Hello! I'm here to help you with digital tasks. You can ask questions, upload documents, or even take photos to get assistance. Choose a category and let me know how I can help!
+                </div>
+            </div>
+            <div class="input-area">
+                <textarea 
+                    id="userInput" 
+                    placeholder="Ask about digital systems, software, or any computer-related question..." 
+                    rows="3"
+                ></textarea>
+                <button onclick="sendMessage()" id="sendBtn">
+                    <span>📤</span> Send
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
